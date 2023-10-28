@@ -27,8 +27,6 @@ class TesteNomeDoAssistente(unittest.TestCase):
             audio = r.listen(source)
             transcricao = r.recognize_google(audio, language="pt-BR")
             
-        
-
         tokens = tokenizar(transcricao.lower())
         tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
         resultado = self.assertEqual(tokens[0], nome_assistente)
