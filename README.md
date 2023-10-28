@@ -19,11 +19,12 @@ Após baixar a aplicação, deve realizar os passos abaixo:
 
 1º - Instalar as dependências
 
-      $ pip install -r requirements.txt
+      pip install -r requirements.txt
       
 2º - Instalar o NLTK
 
-      $ python download.py
+      python download.py
+      
 <h2>👋🏼 Dependências para rodar o programa: </h2>
 <h3>🐍 Python</h3>
 O programa foi desenvolvido inteiramente em Python, e deve está instalado na máquina do usuário para funcionar corretamente.
