@@ -1,0 +1,29 @@
+{
+    "nome": "amigo",
+    "acoes": [
+        {
+            "nome": "temperatura",
+            "objetos": [
+                "atual"
+            ]
+        },
+        {
+            "nome": "previsão",
+            "objetos": [
+                "tempo"
+            ]   
+        },
+        {
+            "nome": "condição",
+            "objetos":[
+                "climática"
+            ]
+        },
+        {
+            "nome": "vai",
+            "objetos":[
+                "chover"
+            ]
+        }
+    ]
+}
