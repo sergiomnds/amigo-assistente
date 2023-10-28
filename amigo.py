@@ -66,16 +66,6 @@ def escutar_fala(reconhecedor):
 
     return tem_fala, fala
 
-
-def processar_audio_de_comando(reconhecedor, audio):
-    tem_fala = False
-    
-    with sr.AudioFile(audio) as fonte_de_audio:
-        fala = reconhecedor.listen(fonte_de_audio)
-        tem_fala = True
-
-    return tem_fala, fala
-
 def transcrever_fala(fala, reconhecedor):
     tem_transcricao = False
     
@@ -90,7 +80,6 @@ def tokenizar(transcricao):
     tokens = word_tokenize(transcricao)
 
     return tokens
-
 
 def eliminar_palavras_de_parada(tokens, palavras_de_parada):
     tokens_filtrados = []

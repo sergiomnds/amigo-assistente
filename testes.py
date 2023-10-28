@@ -13,18 +13,34 @@ PREVISAO_CHUVA = "audios/previsao_chuva.wav"
 
 class TesteNomeDoAssistente(unittest.TestCase):
     def testar_01_reconhecer_nome(self):
+        with open(ARQUIVO_DE_CONFIGURACAO, "r", encoding="utf-8") as arquivo:
+            assistente = json.load(arquivo)
+
+            nome_assistente = assistente["nome"]
+
+            arquivo.close()
+        
         palavras_de_parada = set(corpus.stopwords.words(IDIOMA_CORPUS))
         
         r = sr.Recognizer()
         with sr.AudioFile(CHAMANDO_AMIGO) as source:
             audio = r.listen(source)
             transcricao = r.recognize_google(audio, language="pt-BR")
+            
+        
 
         tokens = tokenizar(transcricao.lower())
         tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
-        resultado = self.assertEqual(tokens[0], "amigo")
+        resultado = self.assertEqual(tokens[0], nome_assistente)
 
     def testar_02_nao_reconhecer_nome(self):
+        with open(ARQUIVO_DE_CONFIGURACAO, "r", encoding="utf-8") as arquivo:
+            assistente = json.load(arquivo)
+
+            nome_assistente = assistente["nome"]
+
+            arquivo.close()
+            
         palavras_de_parada = set(corpus.stopwords.words(IDIOMA_CORPUS))
         
         r = sr.Recognizer()
@@ -34,7 +50,7 @@ class TesteNomeDoAssistente(unittest.TestCase):
 
         tokens = tokenizar(transcricao.lower())
         tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
-        self.assertNotEqual(tokens[0], "amigo")
+        self.assertNotEqual(tokens[0], nome_assistente)
 
 class TestAtuadores(unittest.TestCase):
         
