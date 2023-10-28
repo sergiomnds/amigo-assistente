@@ -24,6 +24,14 @@ Após baixar a aplicação, deve realizar os passos abaixo:
 2º - Instalar o NLTK
 
       python download.py
+
+3º - Rodar o assistente: amigo.py
+
+      python amigo.py
+
+4º - Rodar os testes: testes.py
+
+      python testes.py
       
 <h2>👋🏼 Dependências para rodar o programa: </h2>
 <h3>🐍 Python</h3>
